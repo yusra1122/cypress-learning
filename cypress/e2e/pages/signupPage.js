@@ -68,7 +68,7 @@ cy.get(this.postcode_inputfield).type(postcode);
     
 // }
 
-clickSignup() {
-cy.get(this.submit_button).click();
-}
-}
+// clickSignup() {
+// cy.get(this.submit_button).click();
+// }
+// }
