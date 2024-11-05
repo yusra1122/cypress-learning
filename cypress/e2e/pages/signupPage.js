@@ -9,7 +9,7 @@ address2_inputfield ='input[name = address2]';
 city_inputfield ='input[name = city]';
 state_inputfield ='input[name = state]';
 postcode_inputfield ='input[name = postcode]';
-// country_inputfield ='.css-19bb58m'; //country
+country_inputfield ='.css-19bb58m'; //country
 submit_button ='.inline-flex';
 
 
@@ -62,11 +62,11 @@ cy.get(this.postcode_inputfield).type(postcode);
 }
 
 
-// selectCountry () {
-//         cy.get(this.country_inputfield).click();
-//         cy.contains('India').click();
+selectCountry () {
+        cy.get(this.country_inputfield).click();
+        cy.contains('India').click();
     
-// }
+}
 
 clickSignup() {
 cy.get(this.submit_button).click();

@@ -22,6 +22,6 @@ it('signups succesfully', () => {
     signupPage.enterCity('Lahore');
     signupPage.enterState('Punjab');
     signupPage.enterPostcode('54900');
-    // signupPage.selectCountry(); 
+    signupPage.selectCountry(); 
     signupPage.clickSignup();
 });
