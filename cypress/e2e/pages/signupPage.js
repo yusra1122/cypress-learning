@@ -10,6 +10,7 @@ city_inputfield ='input[name = city]';
 state_inputfield ='input[name = state]';
 postcode_inputfield ='input[name = postcode]';
 country_inputfield ='.css-19bb58m'; //country
+// country_inputfield ='.css-hlgwow';
 submit_button ='.inline-flex';
 
 
@@ -22,26 +23,6 @@ cy.get(this.email_inputfield).type(email);
 enterPassword(password) {
 cy.get(this.password_inputfield).type(password);
 }
-
-//Function to generate a random email
-generateRandomEmail = () =>{
-    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    let email = '';
-    for (let i = 0; i < 10; i++) {
-      email += chars[Math.floor(Math.random() * chars.length)];
-    }
-    return email + '@gmail.com';
-  }
-  
-  //Function to generate a random username
-   generateRandomUsername = (length)=> {
-    const chars = 'abcdefghijklmnopqrstuvwxyz';
-    let username = '';
-    for (let i = 0; i < length; i++) {
-      username += chars[Math.floor(Math.random() * chars.length)];
-    }
-    return username;
-  }
 enterConfirmPassword(confirmpassword) {
 cy.get(this.confirmPassword_inputfield).type(confirmpassword);
 }
@@ -62,11 +43,23 @@ cy.get(this.postcode_inputfield).type(postcode);
 }
 
 
-selectCountry () {
-        cy.get(this.country_inputfield).click();
-        cy.contains('India').click();
+// selectCountry () {
+//         cy.get(this.country_inputfield).click();
+//         cy.contains('Pakistan').click();
     
-}
+// }
+  selectRandomCountry() {
+    // Open the dropdown by clicking the input field
+    cy.get('.css-19bb58m').click();
+      const randomIndex = Math.floor(Math.random() * 248);
+      
+      // Construct the ID for the random option based on the index
+      const randomOptionId = `#react-select-2-option-${randomIndex}`;
+      
+      // Select the random option by clicking on it
+      cy.get(randomOptionId).click();
+    }
+
 
 clickSignup() {
 cy.get(this.submit_button).click();
